@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>A conversa interrompida</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #111; color: #eee; padding: 20px; }
+    .hidden { display: none; margin-top: 20px; color: #aaf; }
+    input, button { padding: 10px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>A conversa interrompida</h1>
+  <p><i>"Queria falar com ele, mas ele sempre mudava de assunto. Eu desisti."</i></p>
+
+  <p><b>Digite a palavra-chave:</b></p>
+  <input type="text" id="resposta">
+  <button onclick="verificar()">Enviar</button>
+
+  <div id="correto" class="hidden">
+    <h2>Fragmento Revelado</h2>
+    <p>Mostra como Johnny se afastava até mesmo dos mais próximos.</p>
+  </div>
+
+  <div id="errado" class="hidden" style="color: red;">
+    <p>Resposta incorreta. Tente novamente.</p>
+  </div>
+
+  <script>
+    function verificar() {
+      const resposta = document.getElementById("resposta").value.trim().toUpperCase();
+      if (resposta === "DISTÂNCIA") {
+        document.getElementById("correto").style.display = "block";
+        document.getElementById("errado").style.display = "none";
+      } else {
+        document.getElementById("errado").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>

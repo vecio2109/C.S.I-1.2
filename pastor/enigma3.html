@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>O sermão não ouvido</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #111; color: #eee; padding: 20px; }
+    .hidden { display: none; margin-top: 20px; color: #aaf; }
+    input, button { padding: 10px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>O sermão não ouvido</h1>
+  <p><i>"Preguei sobre libertação, mas senti que não entrou no coração dele."</i></p>
+
+  <p><b>Digite a palavra-chave:</b></p>
+  <input type="text" id="resposta">
+  <button onclick="verificar()">Enviar</button>
+
+  <div id="correto" class="hidden">
+    <h2>Fragmento Revelado</h2>
+    <p>Mostra que ouvir não é o mesmo que receber.</p>
+  </div>
+
+  <div id="errado" class="hidden" style="color: red;">
+    <p>Resposta incorreta. Tente novamente.</p>
+  </div>
+
+  <script>
+    function verificar() {
+      const resposta = document.getElementById("resposta").value.trim().toUpperCase();
+      if (resposta === "LIBERDADE") {
+        document.getElementById("correto").style.display = "block";
+        document.getElementById("errado").style.display = "none";
+      } else {
+        document.getElementById("errado").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
