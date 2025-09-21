@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pensamentos sombrios</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #111; color: #eee; padding: 20px; }
+    .hidden { display: none; margin-top: 20px; color: #aaf; }
+    input, button { padding: 10px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Pensamentos sombrios</h1>
+  <p><i>"Às vezes penso em desistir. Mas lembro de Clara, do que construímos, e de que ainda posso mudar algo. Por enquanto, respiro."</i></p>
+
+  <p><b>Digite a palavra-chave:</b></p>
+  <input type="text" id="resposta">
+  <button onclick="verificar()">Enviar</button>
+
+  <div id="correto" class="hidden">
+    <h2>Fragmento Revelado</h2>
+    <p>Apesar do desespero, Johnny ainda encontra forças em seus relacionamentos e esperança.</p>
+  </div>
+
+  <div id="errado" class="hidden" style="color: red;">
+    <p>Resposta incorreta. Tente novamente.</p>
+  </div>
+
+  <script>
+    function verificar() {
+      const resposta = document.getElementById("resposta").value.trim().toUpperCase();
+      if (resposta === "RESPIRO") {
+        document.getElementById("correto").style.display = "block";
+        document.getElementById("errado").style.display = "none";
+      } else {
+        document.getElementById("errado").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
